@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using LSL;
 
 namespace LSL4VVVV
@@ -50,7 +51,7 @@ namespace LSL4VVVV
         }
 
         // stupid function, pull last sample from input buffer
-        public void pullLast(out float[] sample, out double timestamp, out bool updated)
+        public void pullLast(out IEnumerable <float> sample, out double timestamp, out bool updated)
         {
             connect();
             float[] newSample = new float[nbChannels];

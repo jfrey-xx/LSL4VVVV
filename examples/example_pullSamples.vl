@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="TneoLBPCdBWMglCjzT7FqW" LanguageVersion="2021.4.8.947" Version="0.128">
+  <Patch Id="CBNUEErQog8LSaZ16uhPbk">
+    <Canvas Id="J32spMp35cKNrAiNywWC6h" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="FJLXEnV2P9HLs5ATKdn34Y">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="Jxp30X4vx5HMisqi3dd1ol">
+        <Canvas Id="JwN3xnEmjocPNiLNq9XMDn" CanvasType="Group">
+          <Node Bounds="242,124,71,19" Id="NZjY0EXkE3WQB6lnMTTLzS">
+            <p:NodeReference>
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="pullSamples" />
+            </p:NodeReference>
+            <Pin Id="PqNOgExFqd3LT4IsEoCcny" Name="Name" Kind="InputPin" />
+            <Pin Id="Ld5pJBysyddLGCF3Mhwm4U" Name="Type" Kind="InputPin" />
+            <Pin Id="DFbEPuIpkWrQcLyABMA2TN" Name="Sample" Kind="OutputPin" />
+            <Pin Id="B675uQGhIPwL2ANJesiN7F" Name="Timestamp" Kind="OutputPin" />
+            <Pin Id="SxJDnPnprAYNS7F9wrdfMA" Name="Updated" Kind="OutputPin" />
+          </Node>
+          <Pad Id="TPU3bt1RaazQAScN5fUGe8" Comment="Sample" Bounds="238,208,108,17" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Uy19MZFr12CMwwMUwQdt5Q" Comment="" Bounds="433,177,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Kxa2J9Yt0HNQLpZkTa4FTp" Comment="Name" Bounds="211,80,44,15" ShowValueBox="true" isIOBox="true" Value="BioSemi">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="AFD0lIhjm3eLdaWNlrdzgu" Comment="Type" Bounds="364,83,35,15" ShowValueBox="true" isIOBox="true" Value="EEG">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="FmLthkP7pFWNZTGG1vHAH9" Comment="Timestamp" Bounds="439,225,75,21" ShowValueBox="true" isIOBox="true" />
+        </Canvas>
+        <Patch Id="LO5rv9ie6CNLzoyxXnbc1v" Name="Create" />
+        <Patch Id="E9AAj4Kc8cLO09dvjm33Wt" Name="Update" />
+        <ProcessDefinition Id="NTEClWB1owYOWIOKbuRARa">
+          <Fragment Id="HdOCeiOrvDFPENsCVYf8YM" Patch="LO5rv9ie6CNLzoyxXnbc1v" Enabled="true" />
+          <Fragment Id="Es2vTpgHq0ZLwbnOIN2RNL" Patch="E9AAj4Kc8cLO09dvjm33Wt" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="TNn3E7j1jU9OeRQFW7gwQg" Ids="DFbEPuIpkWrQcLyABMA2TN,TPU3bt1RaazQAScN5fUGe8" />
+        <Link Id="GWle2YpZQoWMOL8BQ26q1U" Ids="SxJDnPnprAYNS7F9wrdfMA,Uy19MZFr12CMwwMUwQdt5Q" />
+        <Link Id="PIpnkflMlAiM5aQYyQr3Ax" Ids="Kxa2J9Yt0HNQLpZkTa4FTp,PqNOgExFqd3LT4IsEoCcny" />
+        <Link Id="R10zk5DXQZdQFREZqnwov8" Ids="AFD0lIhjm3eLdaWNlrdzgu,Ld5pJBysyddLGCF3Mhwm4U" />
+        <Link Id="M8H66Hs2tosLod4oOu1cnU" Ids="B675uQGhIPwL2ANJesiN7F,FmLthkP7pFWNZTGG1vHAH9" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="O83hwhqTFgFMMOlZ78hz2x" Location="VL.CoreLib" Version="2021.4.8" />
+  <DocumentDependency Id="QJzWNaqgTJ0P4q3b0W5P2k" Location="./LSL4VVVV.vl" />
+</Document>
