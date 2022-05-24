@@ -18,7 +18,7 @@ namespace LSL4VVVV
         private int maxBufLen;
 
         // keeping an eye on last values seen
-        private float[] lastSample;
+        private float[] lastSample = new float[0];
         private double lastTimestamp;
 
         // FIXME: can only deal with Floats
