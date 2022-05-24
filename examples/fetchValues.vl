@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="KYtfgTz6e23QMP8AEf5YE8" LanguageVersion="2021.4.8.947" Version="0.128">
+  <Patch Id="FRPR1hVR2U1McSve9PQ5B3">
+    <Canvas Id="SeMJ9tacvCxMTBQGVxfpWT" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="VTRS3PwaQgzOO2IUkw5HDP">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="TqujVRoaqeEMlr2nhVYvT3">
+        <Canvas Id="GWvOlCap36HOqGKVit71de" CanvasType="Group">
+          <Pad Id="C73eUdS8I3yLamNfH3I54A" Comment="Name" Bounds="406,66,35,15" ShowValueBox="true" isIOBox="true" Value="BioSemi">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="TO3fbAfNjgtPBMxP941jmV" Comment="Type" Bounds="480,94,35,15" ShowValueBox="true" isIOBox="true" Value="EEG">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="366,196,65,19" Id="N3wNcmLVdQnLWEMDOg1A0K">
+            <p:NodeReference LastCategoryFullName="LSL4VVVV.LSLInlet" LastSymbolSource="LSL4VVVV.dll">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Init" />
+            </p:NodeReference>
+            <Pin Id="UizfZybcVfgNnVjwGxCgi0" Name="Target" Kind="InputPin" />
+            <Pin Id="JSwnhc5JuIRLMmtaWlUBZi" Name="Name" Kind="InputPin" />
+            <Pin Id="HwI4hgee7AnOOUyxbowyvt" Name="Type" Kind="InputPin" />
+            <Pin Id="N00Q5ngOa5lLYmYW4ZbUYj" Name="Max Buf Len" Kind="InputPin" />
+            <Pin Id="Uf2ufNs30aIQdVHYKs208b" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Q9vEvAipTSFLE9poPEabRo" SlotId="P7ZE3unie7kNqTWDGwZMzk" Bounds="318,152" />
+          <Pad Id="J50mvwX6NoCPJRBLMx2NPz" SlotId="P7ZE3unie7kNqTWDGwZMzk" Bounds="350,266" />
+          <Node Bounds="408,331,52,26" Id="MeEYcjcpqW4OEjQcpT4cjG">
+            <p:NodeReference LastCategoryFullName="LSL4VVVV.LSLInlet" LastSymbolSource="LSL4VVVV.dll">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="pullLast" />
+            </p:NodeReference>
+            <Pin Id="QBLUR6w9O1lPQnOKV5l8lu" Name="Input" Kind="StateInputPin" />
+            <Pin Id="C5Xisl45praPYHG3F7iegH" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="OoM1uhRZT9NMzsW5w48doV" Name="Sample" Kind="OutputPin" />
+            <Pin Id="PeHqVzmEdkDLUxkYfoL3WZ" Name="Timestamp" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Kq8I8ZOk15COefHjLORMRp" Comment="Sample" Bounds="434,426,143,113" ShowValueBox="true" isIOBox="true" />
+        </Canvas>
+        <Patch Id="PEUU6uIpEd7MhyY1hiLKZ3" Name="Create" />
+        <Patch Id="I7ftcV9bjDoPrRwBXATuVF" Name="Update" />
+        <ProcessDefinition Id="AmC9iRKH7EiP3KuGhjWZv1">
+          <Fragment Id="HI1UkvHsnWrLdOzLXDO1G9" Patch="PEUU6uIpEd7MhyY1hiLKZ3" Enabled="true" />
+          <Fragment Id="LOXCGdf2c0YL83LSemHOmr" Patch="I7ftcV9bjDoPrRwBXATuVF" Enabled="true" />
+        </ProcessDefinition>
+        <Slot Id="P7ZE3unie7kNqTWDGwZMzk" Name="Instance" />
+        <Link Id="Syri7Ij69qDQKBjcEuhiWn" Ids="C73eUdS8I3yLamNfH3I54A,JSwnhc5JuIRLMmtaWlUBZi" />
+        <Link Id="QWR3X13bAMmNdKHDUlPIhx" Ids="TO3fbAfNjgtPBMxP941jmV,HwI4hgee7AnOOUyxbowyvt" />
+        <Link Id="Ss0NIE55LWHPOI0GlXXJQS" Ids="Q9vEvAipTSFLE9poPEabRo,UizfZybcVfgNnVjwGxCgi0" />
+        <Link Id="A5Y1FeJbAW7LRmE55aLm0G" Ids="Uf2ufNs30aIQdVHYKs208b,J50mvwX6NoCPJRBLMx2NPz" />
+        <Link Id="RER1D5XSgLgMB7voZfoiHE" Ids="J50mvwX6NoCPJRBLMx2NPz,QBLUR6w9O1lPQnOKV5l8lu" />
+        <Link Id="Lv4c78yg5QrL69NQWAKoLh" Ids="OoM1uhRZT9NMzsW5w48doV,Kq8I8ZOk15COefHjLORMRp" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="VdImznlNBe6QZQZnzkFqAt" Location="VL.CoreLib" Version="2021.4.8" />
+  <PlatformDependency Id="RaXkWeP4SEXONpmtR7QG1U" Location="./LSL4VVVV.dll" />
+</Document>
