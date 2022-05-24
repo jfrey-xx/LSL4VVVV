@@ -16,6 +16,10 @@ namespace LSL4VVVV
         private int nbChannels = 0;
         private int maxBufLen;
 
+        // keeping an eye on last values seen
+        private float[] lastSample;
+        private double lastTimestamp;
+
         // FIXME: can only deal with Floats
         // TODO: catch disconnect
         public LSLInlet(String name, String type, int maxBufLen = 360)
@@ -46,18 +50,28 @@ namespace LSL4VVVV
         }
 
         // stupid function, pull last sample from input buffer
-        public void pullLast(out float[] sample, out double timestamp)
+        public void pullLast(out float[] sample, out double timestamp, out bool updated)
         {
             connect();
             float[] newSample = new float[nbChannels];
-            double newTimestamp = -1;
+            double newTimestamp = 0;
+            bool gotNewData = false;
             if (isInit)
             {
-                // 0 timeout
+                // we gonna fech all valies, using 0 timeout
                 newTimestamp = inlet.pull_sample(newSample, 0);
+                // from the lib, new sample if timestamp greater than 0
+                while (newTimestamp > 0)
+                {
+                    gotNewData = true;
+                    lastSample = newSample;
+                    lastTimestamp = newTimestamp;
+                    newTimestamp = inlet.pull_sample(newSample, 0);
+                }
             }
-            sample = newSample;
-            timestamp = newTimestamp;
+            sample = lastSample;
+            timestamp = lastTimestamp;
+            updated = gotNewData;
         }
 
         static public LSLInlet Init(LSLInlet target, String name, String type, int maxBufLen = 360)
