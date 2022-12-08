@@ -1,5 +1,5 @@
 
-Attempt at using LSL inside vvvv gamma, https://github.com/jfrey-xx/vvvv.ls reborn.
+Attempt at using LSL inside vvvv gamma, https://github.com/jfrey-xx/vvvv.lsl reborn.
 
 Importing C# binding from https://github.com/labstreaminglayer/liblsl-Csharp
 
